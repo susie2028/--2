@@ -913,7 +913,7 @@ function updateGame(deltaTime) {
       game.kills / KILLS_PER_DIFFICULTY_STEP,
       MAX_DIFFICULTY_STEPS,
     );
-    game.spawn = Math.max(0.55, 2 - (1 + difficultyStep) * 0.15);
+    game.spawn = Math.max(0.55, 1.7 - (1 + difficultyStep) * 0.15);
   }
 
   const speedScale = game.freeze > 0 ? 0.25 : 1;
