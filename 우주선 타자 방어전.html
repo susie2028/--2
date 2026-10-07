@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<title>우주선 타자 방어전</title>
+		<link rel="stylesheet" href="게임.css">
+		<script src="게임.js" defer></script>
+	</head>
+	<body>
+		<canvas id="c"></canvas>
+		<button id="pause" type="button" aria-label="일시정지" title="일시정지">Ⅱ</button>
+		<button id="sound-toggle" type="button" aria-label="사운드 설정" title="사운드 설정" aria-expanded="false">♫</button>
+		<div id="sound-panel" role="group" aria-label="사운드 설정" hidden>
+			<h2 id="sound-panel-title" class="sound-panel-title">사운드</h2>
+			<label class="sound-control" for="music-volume">
+				<span id="music-volume-label">배경음</span>
+				<output id="music-volume-value">100%</output>
+				<input id="music-volume" type="range" min="0" max="100" value="100">
+			</label>
+			<label class="sound-control" for="effects-volume">
+				<span id="effects-volume-label">효과음</span>
+				<output id="effects-volume-value">100%</output>
+				<input id="effects-volume" type="range" min="0" max="100" value="100">
+			</label>
+		</div>
+		<div id="countdown" role="status" aria-live="assertive"></div>
+		<input
+			id="inp"
+			type="text"
+			autocomplete="off"
+			autocapitalize="off"
+			spellcheck="false"
+			placeholder="단어 입력 후 Enter"
+			style="display: none"
+		>
+		<div id="ov">
+			<h1 id="game-title">🚀 우주선 타자 방어전</h1>
+			<p id="msg">
+				사방에서 몰려오는 소행성의 단어를 타이핑해서 파괴하세요.<br>
+				첫 글자를 치면 조준, Enter를 누르면 레이저 발사!<br>
+				오타는 콤보가 끊겨요.<br>
+				아래 입력창에 단어를 치고 <b>Enter</b>! (한글 모드는 한/영 키를 한글로)
+			</p>
+			<div id="language-select">
+				<button id="lk" class="on">한글</button>
+				<button id="le">English</button>
+			</div>
+			<p id="bonus-help">🟡 금빛 = 3배 점수 · 🔵 얼음 = 전체 감속 · 🔴 폭탄 = 주변 연쇄 폭발</p>
+			<div id="result-actions">
+				<button id="go">시작 (Enter)</button>
+				<button id="title-return" hidden>타이틀로 돌아가기</button>
+			</div>
+		</div>
+	</body>
+</html>
